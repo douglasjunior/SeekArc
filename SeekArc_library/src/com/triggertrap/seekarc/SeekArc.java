@@ -289,21 +289,22 @@ public class SeekArc extends View {
 		float left = 0;
 		int arcDiameter = 0;
 
-		mTranslateX = (int) (width * 0.5f);
-		mTranslateY = (int) (height * 0.5f);
-		
-		arcDiameter = min - getPaddingLeft();
+		mTranslateX = (int) (min * 0.5f);
+		mTranslateY = (int) (min * 0.5f);
+
+		arcDiameter = min - getPaddingLeft() - getPaddingRight() - getPaddingTop() - getPaddingBottom();
 		mArcRadius = arcDiameter / 2;
-		top = height / 2 - (arcDiameter / 2);
-		left = width / 2 - (arcDiameter / 2);
+		top = min / 2 - (arcDiameter / 2);
+		left = min / 2 - (arcDiameter / 2);
 		mArcRect.set(left, top, left + arcDiameter, top + arcDiameter);
-	
+
 		int arcStart = (int)mProgressSweep + mStartAngle  + mRotation + 90;
 		mThumbXPos = (int) (mArcRadius * Math.cos(Math.toRadians(arcStart)));
 		mThumbYPos = (int) (mArcRadius * Math.sin(Math.toRadians(arcStart)));
-		
+
 		setTouchInSide(mTouchInside);
-		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+		//super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        setMeasuredDimension(min,min);
 	}
 
 	@Override
