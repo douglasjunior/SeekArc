@@ -391,6 +391,10 @@ public class SeekArc extends View {
 		return angle;
 	}
 
+	public int getProgress() {
+		return mProgress;
+	}
+
 	private int getProgressForAngle(double angle) {
 		int touchProgress = (int) Math.round(valuePerDegree() * angle);
 
@@ -526,4 +530,8 @@ public class SeekArc extends View {
 	public void setClockwise(boolean isClockwise) {
 		mClockwise = isClockwise;
 	}
+
+    public void setProgressColor(int color) {
+        mProgressPaint.setColor(color);
+    }
 }
