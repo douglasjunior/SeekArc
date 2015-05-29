@@ -304,30 +304,31 @@ public class SeekArc extends View {
 
 		setTouchInSide(mTouchInside);
 		//super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        setMeasuredDimension(min,min);
+        setMeasuredDimension(min, min);
 	}
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
-		switch (event.getAction()) {
-		case MotionEvent.ACTION_DOWN:
-			onStartTrackingTouch();
-			updateOnTouch(event);
-			break;
-		case MotionEvent.ACTION_MOVE:
-			updateOnTouch(event);
-			break;
-		case MotionEvent.ACTION_UP:
-			onStopTrackingTouch();
-			setPressed(false);
-			break;
-		case MotionEvent.ACTION_CANCEL:
-			onStopTrackingTouch();
-			setPressed(false);
+		if (isEnabled()) {
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    onStartTrackingTouch();
+                    updateOnTouch(event);
+                    break;
+                case MotionEvent.ACTION_MOVE:
+                    updateOnTouch(event);
+                    break;
+                case MotionEvent.ACTION_UP:
+                    onStopTrackingTouch();
+                    setPressed(false);
+                    break;
+                case MotionEvent.ACTION_CANCEL:
+                    onStopTrackingTouch();
+                    setPressed(false);
 
-			break;
-		}
-
+                    break;
+            }
+        }
 		return true;
 	}
 
