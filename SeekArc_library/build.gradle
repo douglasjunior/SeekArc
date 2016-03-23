@@ -1,13 +1,13 @@
-apply plugin: 'android-library'
+apply plugin: 'com.android.library'
 
 
 dependencies {
-    compile files('libs/android-support-v4.jar')
+    compile "com.android.support:support-v4:22.2.0"
 }
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "19.1.0"
+    buildToolsVersion '22.0.1'
      sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'

@@ -39,9 +39,9 @@
         <attr name="touchInside" format="boolean" />
         <attr name="clockwise" format="boolean" />
     </declare-styleable>
-    
+
     <declare-styleable name="SeekArcTheme">
-        <attr name="seekArcStyle" format="reference"></attr>        
+        <attr name="seekArcStyle" format="reference"></attr>
     </declare-styleable>
 
 </resources>
